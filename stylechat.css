@@ -1,0 +1,101 @@
+/* Main Div settings of grid */
+.containerchat{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height:auto;
+    background: var(--color-light);
+    box-shadow: 0 0 0.1rem var(--color-primary);
+    border-radius: 10px;
+}
+
+.containerchat:active{
+    box-shadow: 0 0 0.5rem var(--color-primary);
+}
+
+/* Text buttons settings of p,g,r */
+.navchat{
+    width: 100%;
+    display: flex;   
+}
+
+.navchat .primary,.navchat .general,.navchat .requests{
+    padding: .5rem;
+    margin: .3rem;
+    width: 100%;
+    border-radius: 5px;
+}
+.primary:hover,
+.general:hover,
+.requests:hover{
+    cursor: pointer;
+    width: 100%;
+    background: var(--color-light);
+    box-shadow: 0 0 0.5rem var(--color-primary);
+}
+
+.primary:active,
+.general:active,
+.requests:active{
+    cursor: pointer;
+    color: var(--color-primary);
+    box-shadow: 0 0 0.1rem var(--color-primary);
+}
+
+/*Users styling*/
+.user{
+    display: flex;
+    margin: 3px;
+    flex-direction: column;
+    border: 0.1rem solid rgb(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: var(--color-white);
+}
+ 
+.profile-user {
+    display: flex;
+    margin: 1rem;
+    text-transform: capitalize;
+}
+
+.profile-user h2{
+    margin: .5rem;
+    font-size: medium;
+}
+
+.messages {
+    grid-row: 1; 
+    background-color: var(--color-light); 
+}
+.input-div {
+    display: flex; 
+    flex-direction: column;
+    padding: 2px;
+}
+.input-div input{
+    width: 75%;
+    padding: 1rem;
+    margin: 0.6rem 0;
+    border: 0.1rem solid rgb(0,0,0,0.3);
+    text-transform: none;
+    border-radius: var(--border-radius);
+}
+
+.input-div button{
+    cursor: pointer;
+    width: 20%;
+    margin: 0.6rem 0;
+    padding: 1rem;
+    text-transform: none;
+    border-radius: var(--border-radius);
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+#input-text{
+    visibility: hidden;
+    grid-column: 1; 
+}
+#send-button{
+    visibility: hidden;
+    grid-column: 2; 
+}

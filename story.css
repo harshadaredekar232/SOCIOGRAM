@@ -1,0 +1,365 @@
+
+.stories-container {
+    max-width: 40rem;
+    margin: 24px auto;
+    position: relative;
+}
+
+.stories-container .previous-btn,
+.stories-container .next-btn,
+.stories-full-view .previous-btn,
+.stories-full-view .next-btn{
+    width: 30px;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #444;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+* body {
+    background-color: #ebebeb;
+}
+.stories-container .previous-btn,
+.stories-container .next-btn{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 400ms ease;
+}
+
+.stories-container .previous-btn.active,
+.stories-container .next-btn.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.stories-container .previous-btn,
+.stories-full-view .previous-btn{
+    left: 8px;
+}
+
+.stories-container .next-btn,
+.stories-full-view .next-btn{
+    right: 8px;
+}
+
+.stories-container .story{
+    height: 180px;
+    width: 120px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.stories-container .story img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stories-container .stories{
+    display: flex;
+    gap: 8px;
+}
+
+.stories-container .content{
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.stories-container .content::-webkit-scrollbar{
+    display: none;
+}
+
+.stories-container .author{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(transparent, black 130%);
+}
+
+.stories-full-view{
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    place-items: center;
+}
+
+.stories-full-view.active{
+    display: grid;
+}
+
+.stories-full-view .close-btn{
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 30px;
+    background: #444;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.stories-full-view .content{
+    height: 90vh;
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+}
+
+.stories-full-view .story{
+    height: 100%;
+    text-align: center;
+}
+
+.stories-full-view .story img{
+    height: 100%;
+    aspect-ratio: 10/16;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.stories-full-view .author{
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Roboto",sans-serif;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 32px;
+    border-radius: 8px;
+}
+
+/* Create Post */
+.Create-post{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 40rem;
+    padding: 0.4rem;
+}
+ .Create-post .profile-photo{
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin-right: 8px;
+    overflow: hidden;
+ }
+ .Create-post input[type="text"] {
+    text-align: left;
+    border-color: #444;
+    padding-left: 8rem;
+    background: transparent;
+    font-size: 2rem;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    
+ }
+ .Create-post button{
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 25px;
+    border-radius: 5rem;
+    background: blueviolet;
+    transition: all 0.2s ease;
+    
+ }
+ .Create-post button:active{
+    transform: scale(0.96);
+ }
+
+/* Post */
+.card{
+    margin: auto;
+    position: relative;
+    width: 650px;
+    min-height: 600px;
+    background: #fff;
+    border-radius: 20px;
+    /*box-shadow: 10px 10px 10px rgba(61, 61, 61, 0.5);*/
+    padding: 20px;
+}
+
+.card .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .top .userDetails{
+    display: flex;
+    align-items: center;
+}
+
+.card .top .userDetails .profileImg{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+    overflow: hidden;
+}
+
+.cover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.card .top .userDetails h3{
+    font-size: 1.5rem;
+    color: #4d4d4f;
+    font-weight: 700;
+    line-height: 1rem;
+    cursor: pointer;
+}
+
+.card .top .userDetails span{
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.card .top .dot{
+    transform: scale(0.6);
+    cursor: pointer;
+}
+
+.imgBg{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 10px 0 15px;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btns img{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.btns .left img{
+    margin-right: 8px;
+}
+
+.likes{
+    margin-top: 5px;
+    font-size: 1.5rem;
+    color: #4d4d4f;
+}
+.message{
+    font-size: 1.5rem;
+    font-weight: 420;
+    margin-top: 5px;
+    color: #777;
+    line-height: 1.5rem;
+}
+.message b{
+    color: #262626;
+}
+.message span{
+    line-height: 2rem;
+    color: #1d92ff;
+    cursor: pointer;
+}
+.comments {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    align-items: center;
+    color: #999;
+}
+
+.addComments {
+    display: grid;
+    grid-template-columns: auto auto auto; /* Three columns for input, img, and post button */
+    grid-template-rows: auto auto; /* Two rows */
+    align-items: center; /* Align items vertically */
+    margin-top: 10px;
+}
+
+.addComments .userImg {
+    position: relative;
+    min-width: 10px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 8px;
+    grid-row: 2; /* Place the image in the second row */
+    grid-column: 1; /* Place the image in the first column */
+}
+
+.addComments .comment-box {
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #262626;
+    grid-row: 2; /* Place the input field in the first row */
+    grid-column: 2; /* Place the input field in the second column */
+}
+
+.addComments .comment-box::placeholder {
+    color: #777;
+}
+
+.addComments .post {
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 25px;
+    background: gray;
+    border-style: none;
+    grid-row: 2; /* Place the post button in the first row */
+    grid-column: 3; /* Place the post button in the third column */
+}
+
+.unordered {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+    grid-row: 1; /* Place the ul in the second row */
+    grid-column: 1 / span 3; /* Span all three columns */
+}
+
+
+
+.postTime{
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #777;
+}
+
+
